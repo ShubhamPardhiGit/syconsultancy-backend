@@ -40,8 +40,8 @@ public class UserController {
             @RequestParam("mobileNo") String mobileNo,
             @RequestParam("address") String address,
             @RequestParam("remark") String remark,
-            @RequestParam("photo") MultipartFile photo,
-            @RequestParam("cv") MultipartFile cv) throws IOException {
+            @RequestParam("photoFile") MultipartFile photo,
+            @RequestParam("cvFile") MultipartFile cv) throws IOException {
         logger.info("Inside controller /register");
         User user = new User();
 
@@ -70,9 +70,8 @@ public class UserController {
             @RequestParam(required = false) String mobileNo,
             @RequestParam(required = false) String address,
             @RequestParam(required = false) String remark,
-
-            @RequestParam(required = false) MultipartFile photo,
-            @RequestParam(required = false) MultipartFile cv
+            @RequestParam(value = "photoFile", required = false) MultipartFile photo,
+            @RequestParam(value = "cvFile", required = false) MultipartFile cv
 
     ) throws IOException {
 logger.info("Inside controller /update") ;
