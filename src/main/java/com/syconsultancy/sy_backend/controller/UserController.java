@@ -19,13 +19,14 @@ import java.util.List;
 @CrossOrigin("*")
 public class UserController {
 
-    private static final Logger logger =LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger =LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/hello")
     public String hello() {
+        logger.info("Inside controller /hello");
         return "App is running";
     }
 
@@ -41,7 +42,7 @@ public class UserController {
             @RequestParam("remark") String remark,
             @RequestParam("photo") MultipartFile photo,
             @RequestParam("cv") MultipartFile cv) throws IOException {
-
+        logger.info("Inside controller /register");
         User user = new User();
 
         user.setFullName(fullName);
@@ -74,7 +75,7 @@ public class UserController {
             @RequestParam(required = false) MultipartFile cv
 
     ) throws IOException {
-
+logger.info("Inside controller /update") ;
         return userService.updateUser(
                 id,
                 fullName,
@@ -91,12 +92,14 @@ public class UserController {
     }
     @GetMapping("/getAllUsers")
     public List<User> getAllUsers() {
+
+        logger.info("Inside controller /getAllUsers") ;
         return userService.getAllUsers();
     }
 
     @GetMapping("/getUser/{id}")
     public User getUserById(@PathVariable Long id) {
-
+        logger.info("Inside controller /getUser") ;
         return userService.getUserById(id);
     }
 
