@@ -34,6 +34,6 @@ public interface UserService {
     User searchByPassportNo(String passportNo);
 
     User saveUser(User user, MultipartFile photoFile, MultipartFile cvFile) throws IOException;
-
+    public void deleteUser(Long id);
 
 }
