@@ -1,5 +1,6 @@
 package com.syconsultancy.sy_backend.controller;
 
+import com.syconsultancy.sy_backend.DTO.UserDto;
 import com.syconsultancy.sy_backend.entity.User;
 import com.syconsultancy.sy_backend.service.UserService;
 import com.syconsultancy.sy_backend.service.impl.UserServiceImpl;
@@ -92,11 +93,13 @@ logger.info("Inside controller /update") ;
         );
     }
     @GetMapping("/getAllUsers")
-    public List<User> getAllUsers() {
+    public List<UserDto> getAllUsers() {
 
         logger.info("Inside controller /getAllUsers") ;
         return userService.getAllUsers();
     }
+
+
 
     @GetMapping("/getUser/{id}")
     public User getUserById(@PathVariable Long id) {

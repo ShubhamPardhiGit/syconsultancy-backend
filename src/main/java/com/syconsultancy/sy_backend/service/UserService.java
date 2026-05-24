@@ -1,5 +1,6 @@
 package com.syconsultancy.sy_backend.service;
 
+import com.syconsultancy.sy_backend.DTO.UserDto;
 import com.syconsultancy.sy_backend.entity.User;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,7 +11,7 @@ public interface UserService {
 
     // User saveUser(User user);
 
-    List<User> getAllUsers();
+    List<UserDto> getAllUsers();
 
     User getUserById(Long id);
 

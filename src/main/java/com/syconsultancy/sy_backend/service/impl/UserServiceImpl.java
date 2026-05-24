@@ -1,5 +1,6 @@
 package com.syconsultancy.sy_backend.service.impl;
 
+import com.syconsultancy.sy_backend.DTO.UserDto;
 import com.syconsultancy.sy_backend.entity.User;
 import com.syconsultancy.sy_backend.repository.UserRepository;
 import com.syconsultancy.sy_backend.service.UserService;
@@ -23,8 +24,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserDto> getAllUsers() {
+        return userRepository.getAllUsers();
     }
 
 
