@@ -5,14 +5,16 @@ public class UserDto {
     private String fullName;
     private String mobileNo;
     private String passportNo;
+    private String designation;
 
     public UserDto(Long id, String fullName,
                        String mobileNo,
-                       String passportNo) {
+                       String passportNo, String designation) {
         this.id = id;
         this.fullName = fullName;
         this.mobileNo = mobileNo;
         this.passportNo = passportNo;
+        this.designation = designation ;
     }
 
     public Long getId() {
@@ -45,5 +47,11 @@ public class UserDto {
 
     public void setPassportNo(String passportNo) {
         this.passportNo = passportNo;
+    }
+    public String getDesignation() {
+        return designation;
+    }
+    public void setDesignation(String designation){
+        this.designation = designation ;
     }
 }

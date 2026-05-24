@@ -19,7 +19,8 @@ SELECT new com.syconsultancy.sy_backend.DTO.UserDto(
     u.id,
     u.fullName,
     u.mobileNo,
-    u.passportNo
+    u.passportNo,
+    u.designation
 )
 FROM User u
 """)
